@@ -1,0 +1,17 @@
+{
+  "name": "opengraph-preview-generator",
+  "version": "1.0.0",
+  "description": "Generates opengraph preview cards for my site using canvas.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Max Ratmeyer",
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^2.7.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
+  }
+}
