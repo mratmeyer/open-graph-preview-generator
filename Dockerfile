@@ -1,6 +1,4 @@
-FROM node:14
-
-WORKDIR /usr/src/app
+FROM node:14-slim
 
 RUN apt-get update && apt-get install -y \
   build-essential \
@@ -9,6 +7,8 @@ RUN apt-get update && apt-get install -y \
   libjpeg-dev \
   libgif-dev \
   librsvg2-dev
+
+WORKDIR /usr/src/app
 
 COPY package.json ./
 
