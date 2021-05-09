@@ -20,7 +20,7 @@ app.get('/*', async (req, res) => {
         return;
     }
 
-    const canvas = createCanvas(1280, 720)
+    const canvas = createCanvas(1280, 644)
     const ctx = canvas.getContext('2d')
 
     ctx.fillStyle = "white";
