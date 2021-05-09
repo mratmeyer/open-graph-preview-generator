@@ -1,10 +1,6 @@
-FROM node:14-slim
+FROM node:14
 
 WORKDIR /usr/src/app
-
-COPY package.json ./
-
-RUN npm install
 
 RUN apt-get update && apt-get install -y \
   build-essential \
@@ -13,6 +9,10 @@ RUN apt-get update && apt-get install -y \
   libjpeg-dev \
   libgif-dev \
   librsvg2-dev
+
+COPY package.json ./
+
+RUN npm install
 
 COPY . .
 
