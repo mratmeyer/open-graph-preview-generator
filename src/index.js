@@ -6,7 +6,6 @@ const utils = require('./utils.js');
 const path = require('path');
 const express = require('express');
 const { createCanvas, loadImage, registerFont } = require('canvas');
-const { chmodSync } = require('fs');
 
 const app = express();
 
