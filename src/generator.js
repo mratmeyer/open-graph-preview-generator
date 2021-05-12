@@ -4,7 +4,7 @@ const path = require('path');
 const { createCanvas, loadImage } = require('canvas');
 
 async function generateCard(title, date, tags) {
-    const canvas = createCanvas(1280, 704)
+    const canvas = createCanvas(1280, 734)
     const ctx = canvas.getContext('2d')
 
     // ctx.fillStyle = "white";
@@ -25,7 +25,7 @@ async function generateCard(title, date, tags) {
     ctx.font = '40px InterBold';
     // ctx.fillStyle = "#414A4C";
     ctx.fillStyle = "#E1E1E1";
-    ctx.fillText(date, 50, 664);
+    ctx.fillText(date, 50, 679);
 
     let formattedTags = 'Tagged: ';
     for(i in tags) {
@@ -40,7 +40,7 @@ async function generateCard(title, date, tags) {
     ctx.font = '40px InterBold';
     // ctx.fillStyle = "#414A4C";
     ctx.fillStyle = "#E1E1E1";
-    ctx.fillText(formattedTags, 600, 664);
+    ctx.fillText(formattedTags, 600, 679);
 
     return canvas.toBuffer('image/png');
 }
