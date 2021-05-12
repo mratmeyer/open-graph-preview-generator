@@ -6,6 +6,7 @@ const utils = require('./utils.js');
 const path = require('path');
 const express = require('express');
 const { createCanvas, loadImage, registerFont } = require('canvas');
+const { chmodSync } = require('fs');
 
 const app = express();
 
@@ -28,21 +29,24 @@ app.get('/*', async (req, res) => {
     const canvas = createCanvas(1280, 704)
     const ctx = canvas.getContext('2d')
 
-    ctx.fillStyle = "white";
+    // ctx.fillStyle = "white";
+    ctx.fillStyle = "#191919";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     const image = await loadImage(path.resolve('assets/profile-256x256.png'));
     ctx.drawImage(image, 50, 50, 178, 178);
 
     ctx.font = '100px InterBold';
-    ctx.fillStyle = "black";
+    // ctx.fillStyle = "black";
+    ctx.fillStyle = "#E1E1E1";
     ctx.fillText(utils.formatText(ctx, title), 50, 350);
 
     ctx.font = '65px InterBold';
     ctx.fillText("Max Ratmeyer's Blog", 275, 165);
 
     ctx.font = '40px InterBold';
-    ctx.fillStyle = "#414A4C";
+    // ctx.fillStyle = "#414A4C";
+    ctx.fillStyle = "#E1E1E1";
     ctx.fillText(date, 50, 664);
 
     let formattedTags = 'Tagged: ';
@@ -56,7 +60,8 @@ app.get('/*', async (req, res) => {
     }
 
     ctx.font = '40px InterBold';
-    ctx.fillStyle = "#414A4C";
+    // ctx.fillStyle = "#414A4C";
+    ctx.fillStyle = "#E1E1E1";
     ctx.fillText(formattedTags, 600, 664);
 
     res.setHeader('content-type', 'image/png');
