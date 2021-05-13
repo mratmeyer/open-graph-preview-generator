@@ -22,7 +22,7 @@ app.get('/*', async (req, res) => {
 
     const title = data.title;
     const date = data.date;
-    const tags = data.tags[0].split(',');
+    const tags = data.tags.split(',');
 
     const image = await generator.generateCard(title, date, tags);
 
