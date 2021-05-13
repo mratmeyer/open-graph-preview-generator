@@ -40,7 +40,7 @@ async function generateCard(title, date, tags) {
     ctx.font = '40px InterBold';
     // ctx.fillStyle = "#414A4C";
     ctx.fillStyle = "#E1E1E1";
-    ctx.fillText(formattedTags, 600, 679);
+    ctx.fillText(formattedTags, 1230 - ctx.measureText(formattedTags).width, 679);
 
     return canvas.toBuffer('image/png');
 }
