@@ -30,10 +30,13 @@ async function generateCard(title, date, tags) {
     let formattedTags = 'Tagged: ';
     for(i in tags) {
         let tag = tags[i].charAt(0).toUpperCase() + tags[i].slice(1);
-        if (i < tags.length - 1) {
-            formattedTags = formattedTags + tag + ", ";
-        } else {
-            formattedTags = formattedTags + tag;
+
+        if (tag != 'Posts') {
+            if (i < tags.length - 1) {
+                formattedTags = formattedTags + tag + ", ";
+            } else {
+                formattedTags = formattedTags + tag;
+            }
         }
     }
 
