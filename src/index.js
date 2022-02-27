@@ -11,6 +11,11 @@ const app = express();
 
 registerFont(path.resolve('assets/Inter-Bold.ttf'), { family: 'InterBold' });
 
+app.get('/robots.txt', async (req, res) => {
+    res.setHeader('content-type', 'text/plain');
+    res.send("User-agent: *\nDisallow: /");
+});
+
 app.get('/*', async (req, res) => {
     const data = await api.getMetadata(req.path);
 
