@@ -1,13 +1,13 @@
 const port = process.env.PORT || 8080;
 
-const api = require('./api.js');
-const generator = require('./generator.js');
-
 const path = require('path');
 const express = require('express');
+const app = express();
+
 const { registerFont } = require('canvas');
 
-const app = express();
+const api = require('./api.js');
+const generator = require('./generator.js');
 
 registerFont(path.resolve('assets/Inter-Bold.ttf'), { family: 'InterBold' });
 
@@ -21,7 +21,7 @@ app.get('/*', async (req, res) => {
 
     if (data == null) {
         res.setHeader('content-type', 'text/plain');
-        res.send("Invalid data source!");
+        res.status(404).send("Uh oh. Open graph server was unable to find metadata for this site.");
         return;
     }
 
