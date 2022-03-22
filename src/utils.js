@@ -23,6 +23,8 @@ function formatText(ctx, text) {
         }
     }
 
+    result = result + temp + '\n';
+
     return result;
 }
 
