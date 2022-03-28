@@ -11,11 +11,6 @@ function formatText(ctx, text) {
         if (width < 1170) {
             // It wouldn't overflow- add it to temp
             temp = temp + words[i] + ' ';
-
-            // Reached the end of the line- commit temp to result
-            if (i == words.length - 1) {
-                result = result + temp + '\n';
-            }
         } else {
             // Text would overflow- add it to the result variable and reset temp
             result = result + temp + '\n';
