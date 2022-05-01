@@ -1,13 +1,18 @@
 const fetch = require('node-fetch');
 
 function getMetadata(path) {
-    const formattedPath = path.replace('.png', '/');
-    const formattedURL = "https://www.maxratmeyer.com/api" + formattedPath + "metadata.json";
+    const url = "https://www.maxratmeyer.com/api/posts.json";
 
-    return fetch(formattedURL)
+    return fetch(url)
         .then(res => res.json())
         .then(json => {
-            return json
+            for (let object in json) {
+                if (object == path + '/') {
+                    return json[object];
+                }
+            }
+
+            return null;
         })
         .catch(error => {
             return null;

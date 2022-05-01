@@ -9,6 +9,8 @@ const { registerFont } = require('canvas');
 const api = require('./api.js');
 const generator = require('./generator.js');
 
+app.disable('x-powered-by');
+
 registerFont(path.resolve('assets/Inter-Bold.ttf'), { family: 'InterBold' });
 
 app.get('/robots.txt', async (req, res) => {
@@ -21,7 +23,7 @@ app.get('/*', async (req, res) => {
 
     if (data == null) {
         res.setHeader('content-type', 'text/plain');
-        res.status(404).send("Uh oh. Open graph server was unable to find metadata for this site.");
+        res.status(404).send("Uh oh. Open graph server was unable to find metadata for this post.");
         return;
     }
 
