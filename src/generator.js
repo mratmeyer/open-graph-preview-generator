@@ -14,15 +14,15 @@ async function generateCard(title, date, tags) {
     const image = await loadImage(path.resolve('assets/profile-256x256.png'));
     ctx.drawImage(image, 50, 50, 178, 178);
 
-    ctx.font = '100px InterBold';
+    ctx.font = '100px Sora-Bold';
     // ctx.fillStyle = "black";
     ctx.fillStyle = "#E1E1E1";
     ctx.fillText(utils.formatText(ctx, title), 50, 350);
 
-    ctx.font = '65px InterBold';
+    ctx.font = '65px Sora-Bold';
     ctx.fillText("Max Ratmeyer's Blog", 275, 165);
 
-    ctx.font = '40px InterBold';
+    ctx.font = '40px Sora-Bold';
     // ctx.fillStyle = "#414A4C";
     ctx.fillStyle = "#E1E1E1";
     ctx.fillText(date, 50, 679);
@@ -40,7 +40,7 @@ async function generateCard(title, date, tags) {
         }
     }
 
-    ctx.font = '40px InterBold';
+    ctx.font = '40px Sora-Bold';
     // ctx.fillStyle = "#414A4C";
     ctx.fillStyle = "#E1E1E1";
     ctx.fillText(formattedTags, 1230 - ctx.measureText(formattedTags).width, 679);

@@ -11,7 +11,7 @@ const generator = require('./generator.js');
 
 app.disable('x-powered-by');
 
-registerFont(path.resolve('assets/Inter-Bold.ttf'), { family: 'InterBold' });
+registerFont(path.resolve('assets/Sora-Bold.ttf'), { family: 'Sora-Bold' });
 
 app.get('/robots.txt', async (req, res) => {
     res.setHeader('content-type', 'text/plain');
